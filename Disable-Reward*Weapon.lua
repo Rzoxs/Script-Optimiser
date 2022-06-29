@@ -3,9 +3,8 @@ AddEventHandler('gameEventTriggered', function (name, args)
         Citizen.CreateThread(function()
             while true do
                 Wait(0)
-                if IsPedInAnyVehicle(GetPlayerPed(-1), false) then
-                    DisablePlayerVehicleRewards(-1)
-                else
+                DisablePlayerVehicleRewards(-1)
+                if not IsPedInAnyVehicle(GetPlayerPed(-1), false) then
                     break
                 end
             end
