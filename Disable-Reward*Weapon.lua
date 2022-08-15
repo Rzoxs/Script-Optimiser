@@ -4,7 +4,7 @@ AddEventHandler('gameEventTriggered', function (name, args)
             while true do
                 Wait(0)
                 DisablePlayerVehicleRewards(-1)
-                if not IsPedInAnyVehicle(GetPlayerPed(-1), false) then
+                if not IsPedInAnyVehicle(PlayerPedId(), false) then
                     break
                 end
             end
