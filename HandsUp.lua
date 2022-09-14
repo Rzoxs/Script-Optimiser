@@ -1,12 +1,3 @@
-ESX = nil
-
-Citizen.CreateThread(function()
-    while ESX == nil do
-        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-        Citizen.Wait(0)
-    end
-end)
-
 local RZS = {
     HandsUp = false,
 }
@@ -19,7 +10,7 @@ RegisterCommand('handsup', function()
         Citizen.Wait(100)
     end
     if IsPedInAnyVehicle(PlayerPedId()) then
-        ESX.ShowNotification('~r~Vous ne pouvez pas levez les mains dans un véhicule')
+        ShowNotification('~r~Vous ne pouvez pas levez les mains dans un véhicule')
     else
         if RZS.HandsUp then
             RZS.HandsUp = false
@@ -30,3 +21,9 @@ RegisterCommand('handsup', function()
         end
     end
 end)
+
+ShowNotification = function(msg)
+	SetNotificationTextEntry('STRING')
+	AddTextComponentSubstringPlayerName(msg)
+	DrawNotification(false, true)
+end
