@@ -2,6 +2,7 @@ local RZS = {
     HandsUp = false,
 }
 
+RegisterKeyMapping("handsup", "Mettre les mains en l'air", "keyboard", "X")
 RegisterCommand('handsup', function()
     local dict = "missminuteman_1ig_2"
 
