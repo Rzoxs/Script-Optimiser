@@ -1,3 +1,4 @@
+-- CLIENT
 AddEventHandler('gameEventTriggered', function (name, args)
     if name == "CEventNetworkPlayerEnteredVehicle" then
         Citizen.CreateThread(function()
